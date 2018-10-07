@@ -17,6 +17,7 @@ class CalculatorServicer(calc_pb2_grpc.CalculatorServicer):
     # the request and response are of the data type
     # calculator_pb2.Number
     def SquareRoot(self, request, context):
+        print("[DEBUG] %s" % request)
         resp = calc_pb2.Number()
         resp.value = calculator.square_root(request.value)
         return resp
